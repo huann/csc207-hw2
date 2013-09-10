@@ -42,7 +42,7 @@ public class TwoA {
 	 */
 	public static int oddSumTo(int n) {
 		int sum = 0;
-		for(int i = 1; i < n; i+=2) {
+		for (int i = 1; i < n; i+=2) {
 			sum += i;
 		} //for all positive odd numbers less than n
 		return sum;
@@ -50,7 +50,8 @@ public class TwoA {
 	
 	
 	/**
-	 * Determines if any pair of numbers in an array of integers has a product that is odd.
+	 * Determines if any pair of numbers in an array of integers has a 
+	 * product that is odd.
 	 */
 	public static boolean isOddProd(int[] ints) {
 		int numOdds = 0;
@@ -67,33 +68,37 @@ public class TwoA {
 	
 	
 	/**
-	 * allDistinct
-	 * takes as input an array of int values 
-	 * returns true if no two elements have equal values and false otherwise.
+	 * Determines whether an array of integers has distinct values.
 	 */
 	public static boolean allDistinct(int[] ints) {
-		for(int i = 0; i < ints.length; i++) {
-			for(int j = i+1; j < ints.length; j++) {
-				if(ints[i] == ints[j]) {
+		for (int i = 0; i < ints.length; i++) {
+			for (int j = i+1; j < ints.length; j++) {
+				if (ints[i] == ints[j]) {
 					return false;
-				} //if
-			} //for
-		} //for
+				} //if equal values
+			} //for every integer in the array starting from int[1]
+		} //for every integer in the array
 		return true;
 	} //allDistinct(int[])
 	
 	
 	/**
-	 * reverseInts
-	 * takes as input an array of int values 
-	 * reverses their order in the same array
+	 * Reverses the order of an array of integers.
 	 */
-	public static int reverseInts(int[] ints) {
-		for(int i = 0; i < ints.length; i++) {
-			
-		}
-	}
+	public static int[] reverseInts(int[] ints) {
+		int[] temp = new int[ints.length];
+		for (int i = 0; i < ints.length; i++) {
+			temp[i] = ints[i];
+		} //for every item in the array
+		for (int i = 0; i < ints.length; i++) {
+			ints[i] = temp[ints.length - (i + 1)];
+		} //for every item in the array
+		return ints;
+	} //reverseInts(int[])
 
-	
-	
+/**
+ * Citations: I consulted Jordan in writing the reverseInts method. 
+ * I also used the world wide web to re-familiarize myself with
+ * relevant mathematical concepts. 
+ */
 }
